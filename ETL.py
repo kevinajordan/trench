@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import csv
-from DataProcessor import DataProcessor as processor
+from TrafficProcessor import TrafficProcessor as processor
 
 class ETL:
     def __init__(self):
@@ -37,6 +37,6 @@ class ETL:
                         tmp_data.extend(tmpMTD[i])
                         tmp_data.append(label)
                         
-                        with open('pos_neg_output.txt', 'a') as csvfile:
+                        with open('traffic_dataset.csv', 'a') as csvfile:
                             writer = csv.writer(csvfile, delimiter=",")
                             writer.writerow(tmp_data)

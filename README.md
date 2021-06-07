@@ -1,41 +1,10 @@
-
-
-![Trench](images/trench.png)
-<pre>Author: Dubem Nwoji</pre>
 # Machine Learning for Encrypted Network Packet Analysis
-[YouTube Video](https://www.youtube.com/watch?v=2N6nMvmkyic)
 ### Introduction
-<pre> 
-Over the years, well-meaning stakeholders have strived to build trust into the internetwork of 
-computers that we call the "web". 
-In the last two years, however, a changing climate of mistrust has begun to grow and it is no 
-surprise it correlates with the exponential growth of data. 
-
-As more and more encryption is leveraged to protect communication and resources in the ever busy 
-ebb and flow that is the web, there is a rising threat hidden in the shadows of TLS traffic - <bold> encrypted malware </bold>.
-
-More effective mitigation techniques, such as packet sniffing (break and inspect) require a packet 
-be "way-layed", decrypted, and the content, assessed for malicious content, before re-encrypting and 
-sending it off on its way (if found to be benign). 
-This solution, will necessary, poses a threat to the very trust that we strive to uphold. 
-In addition to these privacy concerns is the latency and extra overhead introduced to the network - 
-which in huge enterprise settings could lead to significant time and resource loss running into thousands (sometimes millions of dollars).
-
-<b> The Proposal </b> - What if privacy and safety are not mutually exclusive and we can provide 
-network administrators, security engineers, and end users, security while upholding trust and privacy?
-</pre>
-### Provenance
 <pre>
-Trench is a POC threat intelligence tool that uses machine learning to analyse encrypted network traffic 
-for maliciious activity without the need to decrypt packets. 
+This tool uses machine learning to analyse encrypted network traffic for maliciious activity without the need to decrypt packets. 
 
-This project was largely influenced by a <a href = "https://resources.sei.cmu.edu/asset_files/Presentation/2016_017_001_450411.pdf">Cisco research</a> from 2016. As a Data Scientist 
-with Network Security background and a knack for seeking out "impossible" challenges (especially as it relates 
-to the excitingly blossoming field of security Machine Learning and Privacy Engineering), I was naturally drawn to this problem.
-
-I trained multiple packet capture files (about 20GB) sourced from <a href="https://www.unb.ca/cic/datasets/ids-2017.html">Canadian Institute of Cybersecurity, UNB</a> to build my model.
+This project was largely influenced by a <a href = "https://resources.sei.cmu.edu/asset_files/Presentation/2016_017_001_450411.pdf">Cisco research</a> from 2016.
 </pre>
-
 ### Dependencies
 - Python
   - scikit-learn
@@ -76,16 +45,11 @@ To run:
 ## ./process-packet.sh
     
     
-### How Trench Works
-![Trenchscreen](images/Trench_screenshot.png)
-
-
-       
-![Trench Workflow](images/trench_workflow.PNG)
-Trench takes as input, packet capture files. These files are fed into Joy to extract JSON formatted features including TLS metadata, DNS, HTTP, Netflow, etc depending on the argument passed to "bin/joy ...".
+### How It Works
+It takes as input, packet capture files. These files are fed into Joy to extract JSON formatted features including TLS metadata, DNS, HTTP, Netflow, etc depending on the argument passed to "bin/joy ...".
 
 The JSON data is further parsed to extract TLS metadata information as input features to our model.
-This features can broadly be categoried as:
+These features can broadly be categoried as:
 1. TLS/SSL Handshake Information:
   - Ciphersuites
   - Extensions

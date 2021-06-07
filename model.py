@@ -1,11 +1,10 @@
 import os
 import sys
 
-#If Location(ETL, Classifier, DataProcessor) != Current Location; do "sys.path.insert(0, <path/to/script>)"
 import pandas as pd
 from ETL import ETL
 from Classifier import LogisticRegressor
-from DataProcessor import DataProcessor as processor
+from TrafficProcessor import TrafficProcessor as processor
 
 #Pass argument to python script
 pos_file = sys.argv[1]

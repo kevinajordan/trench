@@ -30,14 +30,8 @@ ext = {u'server_name': 0, u'extended_master_secret': 1, u'renegotiation_info': 2
        u'session_ticket': 5, u'application_layer_protocol_negotiation': 6, u'status_request': 7, u'signature_algorithms': 8}
 
 
-class DataProcessor:
+class TrafficProcessor:
     
-    '''
-    Input:
-    
-    Output:
-    
-    '''
     def __init__(self, file):
         self.contents = []
 

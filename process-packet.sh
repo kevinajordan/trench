@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo "Welcome to Trench!" | figlet
-echo $(date -u)
-echo "========== =========== ========== ==========="
-
 #Create folders
 mkdir -p temp/neg/
 mkdir -p temp/pos/
@@ -11,6 +7,11 @@ mkdir -p temp/pos/
 #Set file paths
 FILES=$(find <path/to/folder/for/benign/> -type f -name '*.pcap')
 FILES2=$(find <path/to/folder/for/malware/> -type f -name '*.pcap')
+
+echo "================================================================================="
+echo "Processing pcaps"
+echo "================================================================================="
+echo " "
 
 #Process benign traffic
 for filename in $FILES; do
@@ -30,12 +31,12 @@ done
 
 
 echo "================================================================================="
-echo "Done Processing files"
+echo "Done processing"
 echo "================================================================================="
 echo " "
 
 echo "================================================================================" 
-echo "Running Python Script"
+echo "Running classifier"
 echo "-------------------------------------------------------------------------------"
 
 python trench.py temp/pos/ temp/neg/
