@@ -3,7 +3,7 @@
 <pre>
 This tool uses machine learning to analyse encrypted network traffic for maliciious activity without the need to decrypt packets. 
 
-This project was largely influenced by a <a href = "https://resources.sei.cmu.edu/asset_files/Presentation/2016_017_001_450411.pdf">Cisco research</a> from 2016.
+This project was largely influenced by <a href = "https://resources.sei.cmu.edu/asset_files/Presentation/2016_017_001_450411.pdf">Cisco research</a> from 2016.
 </pre>
 ### Dependencies
 - Python
@@ -39,11 +39,7 @@ This project was largely influenced by a <a href = "https://resources.sei.cmu.ed
 
 5.  Installation:
   
-        sudo ./install_joy/install-sh
-        
-To run:
-## ./process-packet.sh
-    
+        sudo ./install_joy/install-sh   
     
 ### How It Works
 It takes as input, packet capture files. These files are fed into Joy to extract JSON formatted features including TLS metadata, DNS, HTTP, Netflow, etc depending on the argument passed to "bin/joy ...".
