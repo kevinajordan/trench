@@ -1,4 +1,4 @@
-# Machine Learning for Encrypted Network Packet Analysis
+# ML for Encrypted Traffic Classification
 ### Introduction
 <pre>
 This tool uses machine learning to analyse encrypted network traffic for maliciious activity without the need to decrypt packets. 
